@@ -29,12 +29,10 @@ app.get('/randomItem', async (req, res) => {
 
 app.get("/flipcoin", (request, response) => {
     const randomNumber = Math.floor(Math.random() * 2);
-    const heads = "heads";
-    const tails = "tails";
     if(randomNumber === 1){
-        response.send(heads);
+        response.send("heads");
     }else{
-        response.send(tails);
+        response.send("tails");
     }
 })
 
