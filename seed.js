@@ -75,7 +75,7 @@ const seed = async () => {
     await sequelize.sync({force: true})
     await Restaurant.bulkCreate(seedRestaurant, {validate: true})
     await Menu.bulkCreate(seedMenu, {validate: true})
-    await Item.bulkCreate(seedItem, {validate: true})
+    await Item.bulkCreate(seedItem, {validate: true}) 
     console.log('Seeding success!')
     sequelize.close()
   } catch (error) {
