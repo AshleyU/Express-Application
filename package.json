@@ -16,5 +16,13 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshleyU/Express-Application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AshleyU/Express-Application/issues"
+  },
+  "homepage": "https://github.com/AshleyU/Express-Application#readme",
   "description": ""
 }
