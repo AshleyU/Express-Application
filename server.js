@@ -6,6 +6,9 @@ const {Item, Restaurant, Menu} = require('./models/index');
 const app = express();
 const port = 3000;
 
+// Add this boilerplate middleware to successfully use req.body
+app.use(express.json())
+
 //Q: What does express.static help us do?
 //Q: What do you think path.join helps us do?
 app.use(express.static(path.join(__dirname, 'public')))
@@ -46,6 +49,29 @@ app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id, {include: Menu});
     const menu  = await Menu.findByPk(req.params.id, {include: Item});
     res.json({ restaurant, menu })
+})
+
+// Add new restaurant
+app.post('/restaurants', async (req, res) => {
+	let newRestaurant = await Restaurant.create(req.body);
+	res.send('Created!')
+})
+
+// Delete a restaurant
+
+app.delete('/restaurants/:id', async (req, res) => {
+	await Restaurant.destroy({
+		where : {id : req.params.id} // Destory an Restaurant where this object matches
+	})
+	res.send("Deleted!!")
+})
+
+// Update a restaurant
+app.put("/restaurants/:id", async (req, res) => {
+	let updated = await Restaurant.update(req.body, {
+		where : {id : req.params.id} // Update a restaurant where the id matches, based on req.body
+	})
+	res.send("Updated!!")
 })
 
 //Q: What will our server be doing?

@@ -7,12 +7,12 @@ const seedRestaurant = [
   {
     name: 'AppleBees',
     location: 'Texas',
-    cuisine: 'FastFood'
+    cuisine: 'American'
   },
   {
-    name: 'LittleSheep',
+    name: 'Shabro',
     location: 'Dallas',
-    cuisine: 'Hotpot'
+    cuisine: 'Hot Pot'
   },
   {
     name: 'Spice Grill',
@@ -20,14 +20,14 @@ const seedRestaurant = [
     cuisine: 'Indian'
   },
   {
-    name: 'burgetking',
+    name: 'Burger King',
     location: 'Dallas',
-    cuisine: 'Hotpot'
+    cuisine: 'Fast food'
   },
   {
-    name: 'MCDS',
+    name: 'Mcdonalds',
     location: 'Dallas',
-    cuisine: 'Hotpot'
+    cuisine: 'Fast Food'
   },
 ]
 const seedMenu = [
