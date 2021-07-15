@@ -43,7 +43,7 @@ app.get('/restaurants', async (req, res) => {
 
 app.get('/restaurants/:id', async (req, res) => {
 	let restaurant = await Restaurant.findByPk(req.params.id);
-	res.json({restaurant})
+	res.json({ restaurant })
 })
 
 //Q: What will our server be doing?
