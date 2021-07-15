@@ -1,3 +1,4 @@
+const { constants } = require("buffer");
 const express = require("express");
 const path = require('path'); //a node native module
 const {Item, Restaurant, Menu} = require('./models/index');
@@ -42,8 +43,9 @@ app.get('/restaurants', async (req, res) => {
 })
 
 app.get('/restaurants/:id', async (req, res) => {
-	let restaurant = await Restaurant.findByPk(req.params.id, {include: Menu, Item});
-	res.json({ restaurant })
+    const restaurant = await Restaurant.findByPk(req.params.id, {include: Menu});
+    const menu  = await Menu.findByPk(req.params.id, {include: Item});
+    res.json({ restaurant, menu })
 })
 
 //Q: What will our server be doing?
