@@ -41,6 +41,11 @@ app.get('/restaurants', async (req, res) => {
     res.json(allRestaurants);
 })
 
+app.get('/restaurants/:id', async (req, res) => {
+	let restaurant = await Restaurant.findByPk(req.params.id);
+	res.json({restaurant})
+})
+
 //Q: What will our server be doing?
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
