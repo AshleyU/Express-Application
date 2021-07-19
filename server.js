@@ -51,11 +51,13 @@ app.get("/flipcoin", (request, response) => {
     }
 })
 
+//get all restaurants
 app.get('/restaurants', async (req, res) => {
     const allRestaurants = await Restaurant.findAll();
     res.json(allRestaurants);
 })
 
+//get restaurant by id
 app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findByPk(req.params.id, {include: Menu});
     const menu  = await Menu.findByPk(req.params.id, {include: Item});
@@ -69,7 +71,6 @@ app.post('/restaurants', async (req, res) => {
 })
 
 // Delete a restaurant
-
 app.delete('/restaurants/:id', async (req, res) => {
 	await Restaurant.destroy({
 		where : {id : req.params.id} // Destory an Restaurant where this object matches
@@ -85,7 +86,6 @@ app.put("/restaurants/:id", async (req, res) => {
 	res.send("Updated!!")
 })
 
-//Q: What will our server be doing?
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
