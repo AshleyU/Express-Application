@@ -2,3 +2,44 @@ body {
   background-color: white;
   color: black;
 }
+
+img {
+  position: relative;
+  width:  150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  color: rgb(23, 9, 102);
+  font-family: helvetica;
+  text-transform: uppercase;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:cornflowerblue;
+}
+
+a:active {
+  color: black;
+}
+
+h2 {
+  font-family: helvetica;
+}
+
+h3 {
+  font-family: Arial;
+  text-decoration: underline;
+}
+
+h4 {
+  font-family: Arial;
+  line-height: 60%;
+}

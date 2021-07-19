@@ -50,6 +50,12 @@ app.get('/restaurants/:id', async (req, res) => {
     res.render('restaurant', { restaurant })
 })
 
+//get menu by menu id
+app.get('/menu/:id', async (req, res) => {
+    const menu = await Menu.findByPk(req.params.id)
+    res.render('menu', { menu })
+})
+
 // Add new restaurant
 app.post('/restaurants', async (req, res) => {
 	let newRestaurant = await Restaurant.create(req.body);

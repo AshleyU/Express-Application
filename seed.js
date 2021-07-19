@@ -6,7 +6,7 @@ const {Restaurant, Menu, Item} = require('./models/index') //Q: WHY import these
 const seedRestaurant = [
   {
     name: 'AppleBees',
-    location: 'Texas',
+    location: 'Dallas',
     cuisine: 'American',
     image: '/img/applebees.jpg'
   },
@@ -48,28 +48,51 @@ const seedMenu = [
     title: 'Dinner',
     RestaurantId : 3,
   },
-]
-const seedItem = [
   {
-    name: 'bhindi masala',
-    image: 'someimage.jpg',
-    price: 9.50,
-    vegetarian: true,
-    MenuId : 3,
+  title: 'Lunch',
+  RestaurantId : 4,
   },
   {
-    name: 'egusi soup',
+title: 'Dinner',
+RestaurantId : 5,
+  }
+]
+
+const seedItem = [
+  {
+    name: 'Eggs & Bacon',
     image: 'someimage.jpg',
-    price: 10.50,
+    price: 9.50,
+    vegetarian: false,
+    MenuId : 1,
+  },
+  {
+    name: 'Shabu Shabu Buffet',
+    image: 'someimage.jpg',
+    price: 19.99,
     vegetarian: false,
     MenuId : 2,
   },
   {
-    name: 'hamburger',
+    name: 'sushi 2pcs',
     image: 'someimage.jpg',
-    price: 6.50,
+    price: 2.50,
     vegetarian: false,
-    MenuId : 1,
+    MenuId : 3,
+  },
+  {
+    name: 'Impossible Whopper Meal',
+    image: 'someimage.jpg',
+    price: 8.99,
+    vegetarian: true,
+    MenuId : 4,
+  },
+  {
+    name: 'Tofu bibimbap',
+    image: 'someimage.jpg',
+    price: 9.99,
+    vegetarian: true,
+    MenuId : 5,
   }
 ]
 
