@@ -11,23 +11,25 @@ img {
 }
 
 a {
-  position: relative;
+  display: inline-block;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
-  display: block;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
-  color: rgb(23, 9, 102);
-  font-family: helvetica;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
   text-transform: uppercase;
+  font-family: helvetica;
 }
 
 a:hover {
-  text-decoration: underline;
-  color:cornflowerblue;
-}
-
-a:active {
-  color: black;
+  background-color: #4CAF50;
+  color: white;
 }
 
 h2 {
