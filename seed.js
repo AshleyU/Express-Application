@@ -7,27 +7,32 @@ const seedRestaurant = [
   {
     name: 'AppleBees',
     location: 'Texas',
-    cuisine: 'American'
+    cuisine: 'American',
+    image: '/img/applebees.jpg'
   },
   {
     name: 'Shabro',
     location: 'Dallas',
-    cuisine: 'Hot Pot'
+    cuisine: 'Shabu Shabu',
+    image: '/img/shabro.png'
   },
   {
-    name: 'Spice Grill',
+    name: 'Kura Sushi',
     location: 'Houston',
-    cuisine: 'Indian'
+    cuisine: 'Japanese',
+    image: '/img/kura.png'
   },
   {
     name: 'Burger King',
     location: 'Dallas',
-    cuisine: 'Fast food'
+    cuisine: 'Fast food',
+    image: '/img/burgerking.jpg'
   },
   {
-    name: 'Mcdonalds',
+    name: 'Burning Rice',
     location: 'Dallas',
-    cuisine: 'Fast Food'
+    cuisine: 'Korean',
+    image: '/img/burningrice.png'
   },
 ]
 const seedMenu = [
