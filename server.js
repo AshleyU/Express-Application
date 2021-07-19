@@ -1,6 +1,11 @@
 const { constants } = require("buffer");
 const express = require("express");
 const path = require('path'); //a node native module
+
+const Handlebars = require('handlebars')
+const expressHandlebars = require('express-handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+
 const {Item, Restaurant, Menu} = require('./models/index');
 
 const app = express();
@@ -13,8 +18,14 @@ app.use(express.json())
 //Q: What do you think path.join helps us do?
 app.use(express.static(path.join(__dirname, 'public')))
 
-//will add routes
-// 1)client makes a request -> request URL -> URL -> http request -> http response
+//Configures handlebars library to work well w/ Express + Sequelize model
+const handlebars = expressHandlebars({
+    handlebars : allowInsecurePrototypeAccess(Handlebars)
+})
+
+//Tell this express app we're using handlebars
+app.engine('handlebars', handlebars);
+app.set('view engine', 'handlebars')
 
 //will add routes
 app.get('/items', async (req, res) => {
