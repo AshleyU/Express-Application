@@ -27,6 +27,9 @@ const handlebars = expressHandlebars({
 app.engine('handlebars', handlebars);
 app.set('view engine', 'handlebars')
 
+// serve static assets from the public/ folder
+app.use(express.static('public'));
+
 //will add routes
 app.get('/items', async (req, res) => {
     //goes into the database and looks for all Items
@@ -35,33 +38,16 @@ app.get('/items', async (req, res) => {
     res.json(allItems)
 })
 
-app.get('/randomItem', async (req, res) => {
-    const randomNum = Math.floor(Math.random() * 3)
-    const randomItem = await Item.findByPk(randomNum)
-
-    res.json(randomItem)
-})
-
-app.get("/flipcoin", (request, response) => {
-    const randomNumber = Math.floor(Math.random() * 2);
-    if(randomNumber === 1){
-        response.send("heads");
-    }else{
-        response.send("tails");
-    }
-})
-
 //get all restaurants
 app.get('/restaurants', async (req, res) => {
-    const allRestaurants = await Restaurant.findAll();
-    res.json(allRestaurants);
+    const restaurants = await Restaurant.findAll()
+    res.render('restaurants', { restaurants })
 })
 
 //get restaurant by id
 app.get('/restaurants/:id', async (req, res) => {
-    const restaurant = await Restaurant.findByPk(req.params.id, {include: Menu});
-    const menu  = await Menu.findByPk(req.params.id, {include: Item});
-    res.json({ restaurant, menu })
+    const restaurant = await Restaurant.findByPk(req.params.id)
+    res.render('restaurant', { restaurant })
 })
 
 // Add new restaurant
