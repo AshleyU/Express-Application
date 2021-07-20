@@ -60,6 +60,20 @@ app.get('/menu/:id', async (req, res) => {
     res.render('menu', { menu })
 })
 
+app.get('/new-restaurant-form', (req, res) => {
+    res.render('newRestaurantForm');
+})
+
+app.post('/new-restaurant', async (req, res) => {
+    const newRestaurantForm = await Restaurant.create(req.body);
+    const foundRestaurant = await Restaurant.findByPk(newSauce.id);
+    if(foundRestaurant) {
+        res.status(201).send('NEW RESTAURANT CREATED!!!')
+    } else {
+        console.log("NO restaurant created")
+    }
+})
+
 // Add new restaurant
 app.post('/restaurants', async (req, res) => {
 	let newRestaurant = await Restaurant.create(req.body);

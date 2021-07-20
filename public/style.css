@@ -55,3 +55,15 @@ h5 {
 li {
   list-style-type: none;
 }
+
+form {
+  margin-top: 40px;
+}
+
+.form-title {
+  font-size: 35px;
+}
+
+.form-button {
+  margin-top: 20px;
+}
