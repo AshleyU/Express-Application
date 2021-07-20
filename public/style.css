@@ -47,3 +47,11 @@ h4 {
   font-family: Arial;
   line-height: 60%;
 }
+
+h5 {
+  font-style: italic;
+}
+
+li {
+  list-style-type: none;
+}

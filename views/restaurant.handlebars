@@ -2,9 +2,16 @@
 <h4>Cusine: {{restaurant.cuisine}}</h4>
 <h4>Location: {{restaurant.location}}</h4>
 <img class="item-img" src="{{restaurant.image}}" />
-<div>
-    <a href="/menu/{{id}}">See restaurant's menu</a>
-</div>
+  {{#each restaurant.Menus}}
+  <div class="row justify-content-center">
+        <h5>{{this.title}} Menu</h5>
+        <ul class="list-group list-group-flush">
+        {{#each this.Items}}
+            <li>{{this.name}} : ${{this.price}}</li>
+        {{/each}}
+        </ul>
+    </div>
+  {{/each}}
 <div>
     <a href="/restaurants">Back to Restaurant List</a>
 </div>

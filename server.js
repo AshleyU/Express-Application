@@ -46,9 +46,13 @@ app.get('/restaurants', async (req, res) => {
 
 //get restaurant by id
 app.get('/restaurants/:id', async (req, res) => {
-    const restaurant = await Restaurant.findByPk(req.params.id)
+        const restaurant = await Restaurant.findByPk(req.params.id, {include: {
+            model: Menu,
+            include: Item
+        }
+    });
     res.render('restaurant', { restaurant })
-})
+});
 
 //get menu by menu id
 app.get('/menu/:id', async (req, res) => {
