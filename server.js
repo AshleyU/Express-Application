@@ -14,6 +14,8 @@ const port = 3000;
 // Add this boilerplate middleware to successfully use req.body
 app.use(express.json())
 
+app.use(express.urlencoded());
+
 //Q: What does express.static help us do?
 //Q: What do you think path.join helps us do?
 app.use(express.static(path.join(__dirname, 'public')))
