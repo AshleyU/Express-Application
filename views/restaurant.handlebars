@@ -1,12 +1,10 @@
+<h2>Restaurant: {{restaurant.name}}</h2>
+<h4>Cusine: {{restaurant.cuisine}}</h4>
+<h4>Location: {{restaurant.location}}</h4>
+<img class="item-img" src="{{restaurant.image}}" />
 <div>
-	<h2>Restaurant: {{restaurant.name}}</h2>
-    <h4>Cusine: {{restaurant.cuisine}}</h4>
-    <h4>Location: {{restaurant.location}}</h4>
-	<img class="item-img" src="{{restaurant.image}}" />
-    <div class="button1">
-        <a class="btn" href="/menu/{{id}}">See restaurant's menu</a>
-    </div>
-    <div class="button2">
-        <a class="btn" href="/restaurants">Back to Restaurant List</a>
-    </div>
+    <a href="/menu/{{id}}">See restaurant's menu</a>
+</div>
+<div>
+    <a href="/restaurants">Back to Restaurant List</a>
 </div>

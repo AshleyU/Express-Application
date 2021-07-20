@@ -1,12 +1,11 @@
-<section>
-	<h2>There are {{restaurants.length}} restaurants nearby.</h2>
-	{{#each restaurants}} 
-        <article class="clearfix item-container block">
+<h2>There are {{restaurants.length}} restaurants nearby.</h2>
+
+{{#each restaurants}}  
+    <div class="card col-md-4">
         <h3>{{name}}</h3>
         <img class="item-img" src="{{image}}" />
-        <div class="buttons">
-			<a class="btn" href="/restaurants/{{id}}">See Restaurant</a>
-        </div>
-		</article>
-	{{/each}}
-</section>
+            <div>
+                <a href="/restaurants/{{id}}">See Restaurant</a>
+            </div>
+    </div>
+{{/each}}
