@@ -66,7 +66,7 @@ app.get('/new-restaurant-form', (req, res) => {
 
 app.post('/new-restaurant', async (req, res) => {
     const newRestaurantForm = await Restaurant.create(req.body);
-    const foundRestaurant = await Restaurant.findByPk(newSauce.id);
+    const foundRestaurant = await Restaurant.findByPk(newRestaurantForm.id);
     if(foundRestaurant) {
         res.status(201).send('NEW RESTAURANT CREATED!!!')
     } else {
