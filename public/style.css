@@ -67,3 +67,18 @@ form {
 .form-button {
   margin-top: 20px;
 }
+
+.back-to-list {
+  margin-top: 50px;
+}
+
+.add-restaurant-button {
+  margin-top: 100px;
+  border: 2px solid #9da5f3;
+}
+
+.add-restaurant-button:hover {
+  background-color: #9da5f3;
+  color: white;
+  text-decoration: none;
+}
